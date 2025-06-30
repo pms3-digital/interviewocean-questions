@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interview Questions Repository
+
+This is a personal, open-source interview questions repository and showcase website. It's built with Next.js and Tailwind CSS, and it renders markdown files for the questions.
+
+## Features
+
+- **Organized Markdown Files**: Questions are stored in markdown files with frontmatter for metadata like title, tags, difficulty, and category.
+- **Static Site Generation**: The website is statically generated with Next.js for great performance and SEO.
+- **Tag-based Filtering**: Filter questions by category and difficulty.
+- **Search**: Client-side search for questions by title or tag.
+- **Responsive Design**: The website is designed to be responsive and work on both mobile and desktop.
+- **SEO & Sharing**: Each question page has meta tags for SEO and Open Graph support for link sharing.
 
 ## Getting Started
 
@@ -10,27 +21,24 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding Questions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To add a new question, create a new markdown file in the `questions` directory. The file should have the following frontmatter:
 
-## Learn More
+```markdown
+---
+title: "Your Question Title"
+tags: ["tag1", "tag2"]
+difficulty: "easy" | "medium" | "hard"
+category: "dsa" | "frontend" | "backend"
+---
 
-To learn more about Next.js, take a look at the following resources:
+Your question content in markdown...
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The `slug` for the question page will be generated from the file name. For example, a file named `my-new-question.md` will have a slug of `my-new-question`.
+If you create a file in a subdirectory like `dsa/two-sum.md`, the slug will be `dsa-two-sum`. 
